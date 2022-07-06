@@ -82,67 +82,40 @@ for(i=0;i<s.length;i++){
   
     
 }
-console.log("No of words" =" + num );
+console.log("No of words =" + num );
 
 
 //problem 9
 
-var root1 , root2; 
-let a= prompt("enter a value of a");
-let b=prompt("enter a value of b");
-let c= prompt ("enter a value of c");
+var a = prompt("Enter value of a");
+var b = prompt("Enter value of b");
+var c = prompt("Enter value of c");
+ var root_part =Math.sqrt(b*b-4*a*c);
+ var denom = 2*a;
 
-let formula =b *b-4*a*c;
-if (formula>0){
-  root1 = (-b + Math.sqrt(formula))/(2*a);
-  root2 =(-b - Math.sqrt(formula))/(2*a);
+var root1 = (-b+root_part)/denom;
+var root2 =(-b-root_part)/denom;
 
-  console.log("The root of quadratic equation are" +root1  , root2);
+console.log("1st root = " + root1.toFixed(2));
+console.log("2nd root = "+root2.toFixed(2));
+
+// problem 13 
+
+var num = prompt("Enter an array");
+var originalNum = num;
+var reverse =0;
+
+while(num !=0){
+  reverse =(reverse*10)+(num%10);
+  num = parseInt(num/10);
+}
+if(originalNum == reverse){
+  console.log(reverse+ "Plindrome Number");
+}
+else{
+  console.log(reverse+ "Not a Plindrome Number");
 }
 
-//problem10
-
-function AlternateRearrange(arr,n)
-  {arr.sort((a,b)=>a-b);
-   var v1 =[];
-   var v2 =[];
-   for (var i= 0;i<n; i++)
-     if (arr[i] % 2 == 0)
-       v1.push(arr[i]);
-   else 
-       v2.push(arr[i]);
-   var index =0, i= 0,j =0;
-   var flag = false;
-
-   if (arr[0] % 2 == 0)
-     flag = true;
-
-   while (index<n ) {
-
-     if (flag == true ) {
-       arr[index++] = v1[i++];
-       flag =!flag;
-     
-     }
-     else{
-       arr[index] = v2[j++];
-     flag = !flag;
-     }
-   }
-    for (i =  0; i<n; i++)
-      console.log(arr[i] + " ");
-  
-var arr = parseInt(prompt("enter value"));
-   
-var n=arr.length;AlternateRearrange(arr , n);
-console.log (arr)
-       
-               
-   
-         
-  }
-
-// problem  11
 
 
 
